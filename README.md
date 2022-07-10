@@ -1,2 +1,2 @@
 # simple-crm
-An easy open course CRM tool. Planned for broker and mediator relation
+An easy open source CRM tool. Planned for broker and mediator relation
