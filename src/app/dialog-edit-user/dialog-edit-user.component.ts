@@ -12,7 +12,6 @@ export class DialogEditUserComponent implements OnInit {
 
   broker: Broker;
   loading = false;
-  birthDate: Date;
   userId: string;
 
 
