@@ -1,0 +1,49 @@
+<div class="dialog-container">
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+  <h1 mat-dialog-title>Add Depo</h1>
+  <div mat-dialog-content>
+    <div>
+      <mat-form-field appearance="outline" class="mr-right8">
+        <mat-label>First Name</mat-label>
+        <input [disabled]="loading" matInput placeholder="First Name" [(ngModel)]="depo.firstName">
+        <!-- <mat-hint>Please enter the first Name</mat-hint> -->
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="mr-left8">
+        <mat-label>Last Name</mat-label>
+        <input [disabled]="loading" [(ngModel)]="depo.lastName" matInput placeholder="Last Name">
+        <!-- <mat-hint>Please enter the last Name</mat-hint> -->
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Deponumber</mat-label>
+        <input [disabled]="loading" [(ngModel)]="depo.depoNumber" matInput placeholder="Deponumber">
+        <!-- <mat-hint>Please enter the last Name</mat-hint> -->
+      </mat-form-field>
+    </div>
+    <!--
+    <div>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Responsible Broker</mat-label>
+
+          <mat-select [(ngModel)]="depo.broker" name="food">
+            <mat-option *ngFor="let oneBroker of broker",let i = index [value]="oneBroker[i]">
+              {{oneBroker.firstName + ' ' + oneBroker.lastName}}
+            </mat-option>
+          </mat-select>
+
+
+        <input [disabled]="loading" [(ngModel)]="depo.broker" matInput placeholder="Which Broker is responsible">
+         <mat-hint>Please enter the last Name</mat-hint>
+      </mat-form-field>
+    </div>
+-->
+
+  </div>
+  <div mat-dialog-actions>
+    <button [disabled]="loading" mat-button (click)="dialogRef.close()">Cancel</button>
+    <button [disabled]="loading" (click)="saveUser()" mat-button cdkFocusInitial>Save</button>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<mat-card>
+  <table class="user-table">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>City</th>
+      <th>Company</th>
+    </tr>
+    <tr *ngFor="let broker of allBroker" [routerLink]="[broker.customIdName]">
+      <td>{{ broker.firstName  }} {{ broker.lastName }}</td>
+      <td>{{ broker.email }}</td>
+      <td>{{ broker.city }}</td>
+      <td>{{ broker.companyName }}</td>
+    </tr>
+  </table>
+</mat-card>
+
+<button (click)="openDialogBroker()" class="add-user-button" mat-fab color="primary" matTooltip="Add a Broker">
+  <mat-icon>add</mat-icon>
+</button>

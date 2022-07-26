@@ -1,0 +1,33 @@
+<mat-card class="user-detail-header">
+  <button mat-icon-button class="pin-upper-right" [matMenuTriggerFor]="userMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item (click)="editUserDetail()">Edit</button>
+  </mat-menu>
+
+  <img src="./assets/img/kunde.png">
+  <div class="user-details">
+    <h2>{{ broker.firstName + ' ' + broker.lastName}}</h2>
+    {{ broker.email }}
+  </div>
+</mat-card>
+
+<mat-card class="mr-top32">
+  <button mat-icon-button class="pin-upper-right" [matMenuTriggerFor]="addressMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #addressMenu="matMenu">
+    <button mat-menu-item (click)="editMenu()">Edit</button>
+  </mat-menu>
+
+  <!--
+  <mat-card-title>Address</mat-card-title>
+  <mat-card-content>
+    {{ user.street }} <br>
+    {{ user.zipCode + ' ' + user.city}}
+  </mat-card-content>
+  -->
+</mat-card>

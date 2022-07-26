@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "broker-crm-cf73b": {
+      "hosting": {
+        "simple-crm": [
+          "broker-crm-cf73b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "broker-crm-cf73b"
+  }
+}

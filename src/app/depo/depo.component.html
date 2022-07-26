@@ -1,0 +1,25 @@
+<mat-card>
+  <table class="user-table">
+    <tr>
+      <th>Depo Number</th>
+      <th>Owner</th>
+      <th>Broker</th>
+    </tr>
+    <tr *ngFor="let depo of allDepos; let i=index" >
+      <td>{{ depo.depoNumber }}</td>
+      <td>{{ depo.firstName }} {{ depo.lastName }}</td>
+      <!--<td>{{ broker.email }}</td>
+      <td>{{ broker.city }}</td>
+      -->
+      <td>
+        <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)="openDialogDepoBroker(i)">
+          <mat-icon>person_add</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </table>
+</mat-card>
+
+<button (click)="openDialogDepo()" class="add-user-button" mat-fab color="primary" matTooltip="Add a Broker">
+  <mat-icon>add</mat-icon>
+</button>
