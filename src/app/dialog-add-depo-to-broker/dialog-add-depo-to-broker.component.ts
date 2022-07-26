@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Broker, BrokerId } from 'src/models/broker.class';
+import { Broker } from 'src/models/broker.class';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Depo } from 'src/models/depo.class';
 import { SelectedDepoService } from '../selected-depo.service';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-
-
-
 
 
 @Component({
@@ -26,23 +22,10 @@ export class DialogAddDepoToBrokerComponent implements OnInit {
   allDepos = {};
   selectedDepo;
 
-  private brokerCollection: AngularFirestoreCollection<Broker>;
-  brokerId: Observable<BrokerId>;
-
 
 
   constructor(public dialogRef: MatDialogRef<DialogAddDepoToBrokerComponent>, private firestore: AngularFirestore, private selection: SelectedDepoService) {
-    this.brokerCollection = firestore.collection<Broker>('broker');
-    // .snapshotChanges() returns a DocumentChangeAction[], which contains
-    // a lot of information about "what happened" with each change. If you want to
-    // get the data and the id use the map operator.
-    this.brokerId = this.brokerCollection.snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as Broker;
-        const id = a.payload.doc.id;
-        return { id, ...data };
-      }))
-    );
+
    }
 
   ngOnInit(): void {

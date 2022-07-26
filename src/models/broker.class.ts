@@ -1,5 +1,3 @@
-export interface BrokerId extends Broker { id: string; }
-
 export class Broker{
   firstName: string;
   lastName: string;
