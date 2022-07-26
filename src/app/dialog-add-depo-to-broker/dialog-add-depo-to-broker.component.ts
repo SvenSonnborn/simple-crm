@@ -25,11 +25,6 @@ export class DialogAddDepoToBrokerComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<DialogAddDepoToBrokerComponent>, private firestore: AngularFirestore, private selection: SelectedDepoService) { }
 
-  getSelectedDepo():void {
-    this.selection.getSelectedDepo()
-    .subscribe(selectedDepo => this.selectedDepo = selectedDepo);
-  }
-
   ngOnInit(): void {
     this.getSelectedDepo();
     console.log(this.selectedDepo);
@@ -51,9 +46,13 @@ export class DialogAddDepoToBrokerComponent implements OnInit {
 
   }
 
-  saveUser(){
-    console.log('current depo', this.depo);
+  getSelectedDepo():void {
+    this.selection.getSelectedDepo()
+    .subscribe(selectedDepo => this.selectedDepo = selectedDepo);
+  }
 
+  saveUser(){
+    console.log('broker', this.allBroker[this.selectedDepo]);
     this.loading = true;
     this.firestore
     .collection('depo')
